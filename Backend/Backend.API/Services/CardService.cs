@@ -3,7 +3,12 @@ using Backend.API.Data;
 
 namespace Backend.API.Services;
 
-public class CardService {
+public interface ICardService {
+  public Task<List<CardDTO>> GetCards();
+  public Task<SingleCardDTO> GetCard(int id);
+}
+
+public class CardService : ICardService {
   private readonly CardContext _dbContext;
   public CardService(CardContext dbContext) {
     _dbContext = dbContext;

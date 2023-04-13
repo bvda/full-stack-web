@@ -3,7 +3,11 @@ using Backend.API.Data;
 
 namespace Backend.API.Services;
 
-public class SetService {
+public interface ISetService {
+  public Task<List<SetDTO>> GetSets();
+}
+
+public class SetService : ISetService {
   private readonly CardContext _dbContext;
   public SetService(CardContext dbContext) {
     _dbContext = dbContext;

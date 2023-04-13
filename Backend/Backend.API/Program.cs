@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<CardContext>();
-builder.Services.AddTransient<CardService>();
-builder.Services.AddTransient<SetService>();
+builder.Services.AddTransient<ICardService, CardService>();
+builder.Services.AddTransient<ISetService, SetService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -9,9 +9,9 @@ namespace Backend.API.Controller;
 public class SetController : ControllerBase
 {
   private readonly ILogger<CardController> _logger;
-  private readonly SetService _service;
+  private readonly ISetService _service;
 
-  public SetController(SetService service, ILogger<CardController> logger)
+  public SetController(ISetService service, ILogger<CardController> logger)
   {
     _logger = logger;
     _service = service;
