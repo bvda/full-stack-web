@@ -11,10 +11,10 @@ public class SetService {
 
   public Task<List<SetDTO>> GetSets() {
     return _dbContext.Sets
-      .Include(s => s.Cards)
-      .Select(c => new SetDTO { 
-        Name = c.Name, 
-        Cards = c.Cards.Select(c => c.Name).ToList(), 
+      .Include(c => c.Cards)
+      .Select(s => new SetDTO { 
+        Name = s.Name, 
+        Cards = s.Cards.Select(c => new CardForSetDTO { Name = c.Name, CardId = c.CardId }).ToList(), 
       }
     ).ToListAsync();
   }
@@ -22,5 +22,10 @@ public class SetService {
 
 public record SetDTO {
   public required String Name { get; set; }
-  public required ICollection<String> Cards { get; set; }
+  public required ICollection<CardForSetDTO> Cards { get; set; }
+}
+
+public record CardForSetDTO {
+  public required String Name { get; set; }
+  public required int CardId { get; set; }
 }

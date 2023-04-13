@@ -23,4 +23,14 @@ public class CardController : ControllerBase
     var result = await _service.GetCards();
     return Ok(result);
   }
+  [HttpGet("{id}")]
+  public async Task<ActionResult<CardDTO>> Get(int id)
+  {
+    var result = await _service.GetCard(id);
+    if( result == null) {
+      return NotFound();
+    }
+    return Ok(result);
+  }
+
 }
