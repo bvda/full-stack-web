@@ -1,6 +1,5 @@
 namespace Backend.Model;
 
-// EF Core model class
 public class Card {
   public int CardId { get; set; }
   public string ManaCost { get; set; }
