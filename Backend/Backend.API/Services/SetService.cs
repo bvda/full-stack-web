@@ -18,9 +18,11 @@ public class SetService : ISetService {
       .Include(c => c.Cards)
       .Select(s => new SetDTO { 
         Name = s.Name, 
-        Cards = s.Cards.Select(c => new CardForSetDTO { Name = c.Name, CardId = c.CardId }).ToList(), 
-      }
-    ).ToListAsync();
+        Cards = s.Cards.Select(c => new CardForSetDTO { 
+          Name = c.Name, 
+          CardId = c.CardId 
+        }).ToList(), 
+      }).ToListAsync();
   }
 }
 

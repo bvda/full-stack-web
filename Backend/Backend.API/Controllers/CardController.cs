@@ -27,7 +27,7 @@ public class CardController : ControllerBase
   public async Task<ActionResult<CardDTO>> Get(int id)
   {
     var result = await _service.GetCard(id);
-    if( result == null) {
+    if(result == null) {
       return NotFound();
     }
     return Ok(result);
