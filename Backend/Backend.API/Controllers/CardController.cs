@@ -18,9 +18,9 @@ public class CardController : ControllerBase
   }
 
   [HttpGet]
-  public async Task<ActionResult<CardDTO>> Get()
+  public async Task<ActionResult<CardDTO>> Get([FromQuery] GetRequestDTO? requestDTO)
   {
-    var result = await _service.GetCards();
+    var result = await _service.GetCards(requestDTO);
     return Ok(result);
   }
   [HttpGet("{id}")]

@@ -21,7 +21,7 @@ public class CardContext : DbContext
       new Set { SetId = 1, Code = "LEA", Name = "Limited Edition Alpha", CardCount = 295, Block ="", BlockCode = "" },
       new Set { SetId = 2, Code = "USG", Name = "Urza's Saga", CardCount = 365, Block = "Urza", BlockCode = "usg" }, 
       new Set { SetId = 3, Code = "MMQ", Name = "Mercadian Masques", CardCount = 350, Block = "Masques", BlockCode = "mmq" },
-      new Set { SetId = 4, Code = "PCY", Name = "Mercadian Masques", CardCount = 144, Block = "Masques", BlockCode = "mmq" },
+      new Set { SetId = 4, Code = "PCY", Name = "Prophecy", CardCount = 144, Block = "Masques", BlockCode = "mmq" },
     };
     var cards = new[] { 
       new Card { CardId = 1, SetId = 1, Name = "Black Lotus", OracleText = "{T}, Sacrifice Black Lotus: Add three mana of any one color.", ManaCost = "{0}", ConvertedManaCost = 0.0m },

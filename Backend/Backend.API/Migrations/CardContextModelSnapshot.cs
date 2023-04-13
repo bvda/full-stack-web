@@ -80,8 +80,35 @@ namespace Backend.API.Migrations
                             ConvertedManaCost = 3.0m,
                             ManaCost = "{2}{B}",
                             Name = "Yawgmoth's Will",
-                            OracleText = "Until end of turn, you may play lands and cast spells from your graveyard. If a card would be put into your graveyard from anywhere this turn, exile that card instead. ",
+                            OracleText = "Until end of turn, you may play lands and cast spells from your graveyard.\nIf a card would be put into your graveyard from anywhere this turn, exile that card instead. ",
                             SetId = 2
+                        },
+                        new
+                        {
+                            CardId = 5,
+                            ConvertedManaCost = 0.0m,
+                            ManaCost = "",
+                            Name = "Rishadan Port",
+                            OracleText = "{T}: Add {C}.\n{1}, {T}: Tap target land.",
+                            SetId = 3
+                        },
+                        new
+                        {
+                            CardId = 6,
+                            ConvertedManaCost = 3.0m,
+                            ManaCost = "{2}{G}",
+                            Name = "Food Chain",
+                            OracleText = "Exile a creature you control: Add X mana of any one color, where X is 1 plus the exiled creature's mana value. Spend this mana only to cast creature spells.",
+                            SetId = 3
+                        },
+                        new
+                        {
+                            CardId = 7,
+                            ConvertedManaCost = 3.0m,
+                            ManaCost = "{2}{U}",
+                            Name = "Rhystic Study",
+                            OracleText = "Whenever an opponent casts a spell, you may draw a card unless that player pays {1}.",
+                            SetId = 4
                         });
                 });
 
@@ -147,7 +174,7 @@ namespace Backend.API.Migrations
                             BlockCode = "mmq",
                             CardCount = 144,
                             Code = "PCY",
-                            Name = "Mercadian Masques"
+                            Name = "Prophecy"
                         });
                 });
 
