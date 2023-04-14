@@ -26,5 +26,5 @@ export function SetView() {
         {set.cards.map(c => (<li key={c.id}><Link to={`/card/${c.id}`}>{c.name}</Link></li>))}
       </ul>
     </div>
-  ) : <>asd</>;
+  ) : <>Loading...</>;
 }
