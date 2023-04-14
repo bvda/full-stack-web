@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { CardListItem } from "./CardListItem";
 
 export function CardList({items}) {
     return (
       <ul>
         {items.map(c => (
-          <li key={c.name}><Link to={`/card/${c.id}`}>{c.name}</Link></li>
+          <li key={c.name}>
+            <CardListItem card={c} />
+          </li>
         ))}
       </ul>
     );
