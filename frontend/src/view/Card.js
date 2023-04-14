@@ -4,7 +4,7 @@ import { fetchCard } from "../service/CardService";
 
 export function CardView() {
   const { id } = useParams();
-  const [card, setCard] = useState([]);
+  const [card, setCard] = useState({});
 
   useEffect(() => {
     const getCard = async () => {

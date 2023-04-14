@@ -5,7 +5,7 @@ namespace Backend.API.Services;
 
 public interface ICardService {
   public Task<List<CardDTO>> GetCards(GetRequestDTO? requestDTO);
-  public Task<SingleCardDTO> GetCard(int id);
+  public Task<SingleCardDTO?> GetCard(int id);
 }
 
 public class CardService : ICardService {
@@ -33,8 +33,8 @@ public class CardService : ICardService {
 
   public Task<SingleCardDTO?> GetCard(int id) {
     return _dbContext.Cards
-      .Include(c => c.Set)
       .Where(c => c.CardId == id)
+      .Include(c => c.Set)
       .Select(c => new SingleCardDTO { 
         Name = c.Name,
         Id = c.CardId,

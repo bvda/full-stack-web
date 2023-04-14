@@ -23,4 +23,11 @@ public class SetController : ControllerBase
     var result = await _service.GetSets();
     return Ok(result);
   }
+
+  [HttpGet("{id}")]
+  public async Task<ActionResult<SetDTO>> Get(int id)
+  {
+    var result = await _service.GetSet(id);
+    return Ok(result);
+  }
 }
