@@ -25,8 +25,8 @@ public class CardService : ICardService {
     return query
       .Include(c => c.Set)
       .Select(c => new CardDTO { 
-        Name = c.Name, 
-        Set = c.Set.Name, 
+        Name = c.Name,
+        Id = c.CardId, 
       }
     ).ToListAsync();
   }
@@ -37,6 +37,7 @@ public class CardService : ICardService {
       .Where(c => c.CardId == id)
       .Select(c => new SingleCardDTO { 
         Name = c.Name,
+        Id = c.CardId,
         ManaCost = c.ManaCost,
         ConvertedManaCost = c.ConvertedManaCost,
         OracleText = c.OracleText,
@@ -48,10 +49,11 @@ public class CardService : ICardService {
 
 public record CardDTO {
   public required String Name { get; set; }
-  public required String Set { get; set; }
+  public int Id { get; set;}
 }
 
 public record SingleCardDTO : CardDTO {
+  public required String Set { get; set; }
   public required String ManaCost { get; set; }
   public decimal ConvertedManaCost { get; set; }
   public required String OracleText { get; set; }
