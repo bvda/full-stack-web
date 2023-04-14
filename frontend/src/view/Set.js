@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import { fetchSet } from "../service/SetService";
+import { CardList } from "./CardList";
 
 export function SetView() {
   const { id } = useParams();
@@ -20,11 +21,9 @@ export function SetView() {
   }, [id]);
 
   return set ? (
-    <div>
+    <>
       <h1>{set.name}</h1>
-      <ul>
-        {set.cards.map(c => (<li key={c.id}><Link to={`/card/${c.id}`}>{c.name}</Link></li>))}
-      </ul>
-    </div>
+      <CardList items={set.cards} />
+    </>
   ) : <>Loading...</>;
 }

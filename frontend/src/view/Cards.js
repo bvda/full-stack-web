@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchCards } from "../service/CardService";
-import { Link } from "react-router-dom";
+import { CardList } from "./CardList";
 
 export function CardsView() {
   const [cards, setCards] = useState([]);
@@ -21,11 +21,7 @@ export function CardsView() {
   return (
     <div>
       <h1>Cards</h1>
-      <ul>
-        {cards.map((c) => (
-          <li key={c.name}><Link to={`/card/${c.id}`}>{c.name}</Link></li>
-        ))}
-      </ul>
+      <CardList items={cards} />
     </div>
   );
 }
