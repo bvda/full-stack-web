@@ -1,12 +1,16 @@
-import { CardsView } from './view/Cards'
-import { SetsView } from './view/Sets'
+import { Link, Outlet } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <SetsView />
-      <CardsView />
-    </div>
+  return (   
+    <>
+      <nav>
+        <ul>
+          <li><Link to={`/sets`}>Sets</Link></li>
+          <li><Link to={`/cards`}>Cards</Link></li>
+        </ul>
+      </nav>
+      <Outlet />
+    </>
   );
 }
 
